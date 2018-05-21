@@ -3,9 +3,7 @@ from flask import jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    name = {'juan':'j'}
-    return jsonify(name)
 if __name__ == '__main__':
+    from routes import admin
+    app.register_blueprint(admin)
     app.run(debug=True)
